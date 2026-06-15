@@ -88,6 +88,30 @@
     render();
   });
 
+  // News commentary ("The Brief")
+  const newsList = document.getElementById("news-list");
+  const news = window.NEWS || [];
+  if (newsList) {
+    newsList.innerHTML = news.map(newsHTML).join("");
+  }
+
+  function newsHTML(n) {
+    return `
+      <article class="news-item">
+        <div class="news-tags">
+          <span class="news-topic">${n.topic}</span>
+          <span class="news-region">${n.region}</span>
+          <span class="news-date">${n.date}</span>
+        </div>
+        <h3>${n.headline}</h3>
+        <p class="news-summary">${n.summary}</p>
+        <div class="news-take">
+          <span class="news-take-label">The KemetLeads take</span>
+          <p>${n.take}</p>
+        </div>
+      </article>`;
+  }
+
   // Newsletter signup
   const form = document.getElementById("subscribe-form");
   const msg = document.getElementById("form-msg");

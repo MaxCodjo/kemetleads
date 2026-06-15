@@ -16,11 +16,11 @@ app.post("/api/subscribe", (req, res) => {
   const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
   if (!ok) return res.status(400).json({ error: "Please enter a valid email address." });
   subscribers.push({ email, at: new Date().toISOString() });
-  res.json({ ok: true, message: "You're on the list. Welcome to AfricaLeads." });
+  res.json({ ok: true, message: "You're on the list. Welcome to KemetLeads." });
 });
 
 app.get("/healthz", (_req, res) => res.json({ status: "ok" }));
 
 app.listen(PORT, () => {
-  console.log(`AfricaLeads running on port ${PORT}`);
+  console.log(`KemetLeads running on port ${PORT}`);
 });

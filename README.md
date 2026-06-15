@@ -1,12 +1,13 @@
-# AfricaLeads 🌍
+# KemetLeads 🌍
 
 **Understand Africa before it makes the news.**
 
-AfricaLeads is an independent intelligence platform profiling the great leaders of Africa — past and present — alongside political and business analysis for professionals and the diaspora.
+KemetLeads is an independent intelligence platform profiling the great leaders of Africa — past and present — with selected news commentary and political and business analysis for professionals and the diaspora.
 
 ## What's inside
 
-- **Leaders Collection** — 18 honest profiles spanning liberation icons, contemporary heads of state, business builders, cultural voices, and global institution leaders. Each follows the AfricaLeads format: *the rise · what they did · the full picture · why it matters · in their words.*
+- **Leaders Collection** — 18 honest profiles spanning liberation icons, contemporary heads of state, business builders, cultural voices, and global institution leaders. Each follows the KemetLeads format: *the rise · what they did · the full picture · why it matters · in their words.*
+- **The Brief** — selected news with the KemetLeads take: the "so what" layer on the stories that matter.
 - **Editorial** — the case for honest, balanced coverage of African leadership.
 - **Membership tiers** — Free / Pro / Intelligence.
 - **Newsletter signup** — captures emails via a simple API endpoint.
@@ -39,7 +40,8 @@ africaleads/
     ├── index.html     # The site
     ├── styles.css
     ├── app.js         # Rendering, filtering, search, modal, signup
-    └── leaders.js     # The leaders dataset
+    ├── leaders.js     # The leaders dataset
+    └── news.js        # Selected news + commentary ("The Brief")
 ```
 
 ## Editing content

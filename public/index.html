@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AfricaLeads — Understand Africa before it makes the news</title>
-  <meta name="description" content="AfricaLeads is the intelligence platform profiling the great leaders of Africa, past and present, with sharp political and business analysis for professionals and the diaspora." />
+  <title>KemetLeads — Understand Africa before it makes the news</title>
+  <meta name="description" content="KemetLeads is the intelligence platform profiling the great leaders of Africa, past and present, with selected news commentary and sharp political and business analysis for professionals and the diaspora." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -14,9 +14,10 @@
 <body>
   <header class="nav">
     <div class="nav-inner">
-      <a class="brand" href="#top"><span class="brand-mark">AL</span> AfricaLeads</a>
+      <a class="brand" href="#top"><span class="brand-mark">KL</span> KemetLeads</a>
       <nav class="nav-links">
         <a href="#leaders">Leaders</a>
+        <a href="#news">News</a>
         <a href="#analysis">Analysis</a>
         <a href="#pricing">Pricing</a>
         <a href="#subscribe" class="btn btn-sm">Free briefing</a>
@@ -31,7 +32,7 @@
         <p class="eyebrow">Intelligence · Profiles · Legacy</p>
         <h1>Understand Africa before it makes the news.</h1>
         <p class="lede">
-          AfricaLeads profiles the great leaders of the continent — past and present — and delivers the political and business analysis that professionals and the diaspora can act on.
+          KemetLeads profiles the great leaders of the continent — past and present — comments on the news that matters, and delivers the political and business analysis that professionals and the diaspora can act on.
         </p>
         <div class="hero-cta">
           <a href="#subscribe" class="btn btn-lg">Get the free weekly briefing →</a>
@@ -53,7 +54,7 @@
       </div>
       <div class="value-card">
         <h3>🌍 Built for the diaspora</h3>
-        <p>Whether you're investing, advising, building, or staying rooted, AfricaLeads keeps you ahead of the curve from anywhere in the world.</p>
+        <p>Whether you're investing, advising, building, or staying rooted, KemetLeads keeps you ahead of the curve from anywhere in the world.</p>
       </div>
       <div class="value-card">
         <h3>🏛️ Legacy you can trust</h3>
@@ -81,14 +82,23 @@
       <p class="empty" id="empty" hidden>No leaders match your search.</p>
     </section>
 
+    <!-- NEWS / COMMENTARY -->
+    <section id="news" class="news">
+      <div class="section-head">
+        <h2>The Brief — our take on the news</h2>
+        <p>We don't just report what happened. Here's what it means, and why it matters — selected stories with the KemetLeads take.</p>
+      </div>
+      <div class="news-list" id="news-list"></div>
+    </section>
+
     <!-- ANALYSIS / EDITORIAL -->
     <section id="analysis" class="analysis">
       <div class="section-head">
-        <h2>Why AfricaLeads exists</h2>
+        <h2>Why KemetLeads exists</h2>
       </div>
       <div class="analysis-body">
         <p>Most coverage of African leadership swings between two extremes: uncritical worship or dismissive caricature. Neither serves the people who actually need to understand the continent.</p>
-        <p>AfricaLeads takes a third path. Every profile follows the same discipline — <em>the rise, what they did, the full picture, and why it matters</em> — celebrating real greatness while refusing to look away from complexity. Liberation heroes who became autocrats. Reformers whose progress came at the cost of freedom. Builders whose success raises new questions.</p>
+        <p>KemetLeads takes a third path. Every profile follows the same discipline — <em>the rise, what they did, the full picture, and why it matters</em> — celebrating real greatness while refusing to look away from complexity. Liberation heroes who became autocrats. Reformers whose progress came at the cost of freedom. Builders whose success raises new questions.</p>
         <p>That honesty is the product. It's what turns a directory of names into intelligence you can rely on — for business, for policy, for understanding where Africa is heading next.</p>
       </div>
     </section>
@@ -151,9 +161,9 @@
   </main>
 
   <footer class="footer">
-    <p><span class="brand-mark">AL</span> AfricaLeads</p>
-    <p class="muted">Profiling the great leaders of Africa, past and present. Built as an independent intelligence platform.</p>
-    <p class="muted small">© <span id="year"></span> AfricaLeads. Profiles are editorial summaries for general information.</p>
+    <p><span class="brand-mark">KL</span> KemetLeads</p>
+    <p class="muted">Profiling the great leaders of Africa, past and present, with commentary on the news that matters. An independent intelligence platform.</p>
+    <p class="muted small">© <span id="year"></span> KemetLeads. Profiles and commentary are editorial summaries for general information.</p>
   </footer>
 
   <!-- PROFILE MODAL -->
@@ -166,6 +176,7 @@
   </div>
 
   <script src="leaders.js"></script>
+  <script src="news.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

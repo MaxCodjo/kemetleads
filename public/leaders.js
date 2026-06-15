@@ -1,4 +1,4 @@
-// AfricaLeads — Leaders dataset. Each entry follows the AfricaLeads profile format.
+// KemetLeads — Leaders dataset. Each entry follows the KemetLeads profile format.
 window.LEADERS = [
   // ---------------- PAST ----------------
   {

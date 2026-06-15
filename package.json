@@ -1,7 +1,7 @@
 {
-  "name": "africaleads",
+  "name": "kemetleads",
   "version": "1.0.0",
-  "description": "AfricaLeads — intelligence and profiles of the great leaders of Africa, past and present.",
+  "description": "KemetLeads — intelligence, profiles, and news commentary on the great leaders of Africa, past and present.",
   "main": "server.js",
   "type": "module",
   "scripts": {
