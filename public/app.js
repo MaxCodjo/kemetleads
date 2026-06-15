@@ -88,6 +88,82 @@
     render();
   });
 
+  // Featured Leaders slideshow
+  const slidesEl = document.getElementById("slides");
+  const dotsEl = document.getElementById("slide-dots");
+  const counterEl = document.getElementById("slide-counter");
+  let slideIndex = 0;
+  let slideTimer = null;
+
+  function slideHTML(l) {
+    return `
+      <div class="slide" data-id="${l.id}">
+        <span class="slide-flag">${l.flag}</span>
+        <span class="card-era ${l.era}">${l.era}</span>
+        <h3>${l.name}</h3>
+        <div class="slide-meta">${l.country} · ${l.years}</div>
+        <div class="slide-role">${l.role}</div>
+        <p class="slide-tagline">${l.tagline}</p>
+        <blockquote class="slide-quote">“${l.quote}”</blockquote>
+        <button class="btn btn-sm slide-cta" data-open-id="${l.id}">Read full profile →</button>
+      </div>`;
+  }
+
+  function showSlide(i) {
+    const slides = slidesEl.querySelectorAll(".slide");
+    const dots = dotsEl.querySelectorAll(".dot");
+    if (!slides.length) return;
+    slideIndex = (i + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle("active", k === slideIndex));
+    dots.forEach((d, k) => d.classList.toggle("active", k === slideIndex));
+    counterEl.textContent = `${slideIndex + 1} / ${slides.length}`;
+  }
+
+  function nextSlide() { showSlide(slideIndex + 1); }
+  function prevSlide() { showSlide(slideIndex - 1); }
+
+  function startAuto() {
+    stopAuto();
+    slideTimer = setInterval(nextSlide, 5500);
+  }
+  function stopAuto() {
+    if (slideTimer) clearInterval(slideTimer);
+    slideTimer = null;
+  }
+
+  if (slidesEl && leaders.length) {
+    slidesEl.innerHTML = leaders.map(slideHTML).join("");
+    dotsEl.innerHTML = leaders
+      .map((_, i) => `<button class="dot" data-i="${i}" aria-label="Go to leader ${i + 1}"></button>`)
+      .join("");
+    showSlide(0);
+    startAuto();
+
+    document.getElementById("slide-next").addEventListener("click", () => { nextSlide(); startAuto(); });
+    document.getElementById("slide-prev").addEventListener("click", () => { prevSlide(); startAuto(); });
+    dotsEl.addEventListener("click", (e) => {
+      const dot = e.target.closest(".dot");
+      if (!dot) return;
+      showSlide(parseInt(dot.dataset.i, 10));
+      startAuto();
+    });
+    slidesEl.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-open-id]");
+      const slide = e.target.closest(".slide");
+      const id = btn ? btn.dataset.openId : slide ? slide.dataset.id : null;
+      if (id) openModal(id);
+    });
+    const shell = document.getElementById("slideshow");
+    shell.addEventListener("mouseenter", stopAuto);
+    shell.addEventListener("mouseleave", startAuto);
+    document.addEventListener("keydown", (e) => {
+      const typing = /^(INPUT|TEXTAREA)$/.test(document.activeElement?.tagName || "");
+      if (typing || !modal.hidden) return;
+      if (e.key === "ArrowRight") { nextSlide(); startAuto(); }
+      if (e.key === "ArrowLeft") { prevSlide(); startAuto(); }
+    });
+  }
+
   // News commentary ("The Brief")
   const newsList = document.getElementById("news-list");
   const news = window.NEWS || [];

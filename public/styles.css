@@ -94,6 +94,38 @@ section { padding: 84px 24px; }
 .value-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
 .value-card p { color: var(--muted); font-size: .98rem; }
 
+/* Featured slideshow */
+.showcase { background: radial-gradient(1000px 420px at 50% 0%, rgba(214,164,76,.10), transparent 60%); }
+.slideshow { max-width: 760px; margin: 0 auto; position: relative; display: flex; align-items: center; gap: 12px; }
+.slides { position: relative; flex: 1; min-height: 360px; }
+.slide {
+  display: none; text-align: center; padding: 38px 28px;
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--line); border-radius: 20px; cursor: pointer;
+}
+.slide.active { display: block; animation: slideFade .55s ease; }
+@keyframes slideFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.slide-flag { font-size: 3rem; display: block; margin-bottom: 10px; }
+.slide .card-era { display: inline-block; margin-bottom: 14px; }
+.slide h3 { font-size: 2rem; }
+.slide-meta { color: var(--gold); font-weight: 600; font-size: .9rem; margin-top: 6px; }
+.slide-role { color: var(--muted); font-size: .9rem; margin-top: 2px; }
+.slide-tagline { font-family: "Fraunces", serif; font-style: italic; font-size: 1.2rem; color: var(--gold-bright); margin: 16px auto; max-width: 560px; line-height: 1.35; }
+.slide-quote { font-family: "Fraunces", serif; color: var(--cream); opacity: .85; font-size: 1.05rem; max-width: 520px; margin: 0 auto 20px; }
+.slide-cta { pointer-events: auto; }
+.slide-nav {
+  flex-shrink: 0; width: 46px; height: 46px; border-radius: 50%; cursor: pointer;
+  background: var(--panel); border: 1px solid var(--line); color: var(--gold-bright);
+  font-size: 1.6rem; line-height: 1; display: grid; place-items: center; transition: all .15s;
+}
+.slide-nav:hover { background: var(--gold); color: #2a1d08; border-color: var(--gold); transform: scale(1.05); }
+.slide-footer { max-width: 760px; margin: 22px auto 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.slide-counter { color: var(--muted); font-size: .85rem; letter-spacing: .08em; font-variant-numeric: tabular-nums; }
+.slide-dots { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; max-width: 520px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; border: none; cursor: pointer; padding: 0; background: rgba(214,164,76,.28); transition: all .15s; }
+.dot:hover { background: rgba(214,164,76,.6); }
+.dot.active { background: var(--gold); transform: scale(1.3); }
+
 /* Leaders */
 .controls { max-width: var(--maxw); margin: 0 auto 30px; display: flex; gap: 16px; justify-content: space-between; align-items: center; flex-wrap: wrap; }
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -210,6 +242,11 @@ section { padding: 84px 24px; }
   .hero-stats { gap: 30px; }
   section { padding: 60px 20px; }
   .modal-card { padding: 32px 24px; }
+  .slideshow { gap: 6px; }
+  .slide { padding: 30px 18px; }
+  .slides { min-height: 400px; }
+  .slide-nav { width: 38px; height: 38px; font-size: 1.3rem; }
+  .slide h3 { font-size: 1.6rem; }
 }
 @media (max-width: 600px) {
   .grid { grid-template-columns: 1fr; }
