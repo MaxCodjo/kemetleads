@@ -106,6 +106,13 @@ section { padding: 84px 24px; }
 .slide.active { display: block; animation: slideFade .55s ease; }
 @keyframes slideFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .slide-flag { font-size: 3rem; display: block; margin-bottom: 10px; }
+.slide-portrait-wrap { position: relative; width: 140px; height: 140px; margin: 0 auto 14px; }
+.slide-portrait { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid var(--gold); position: relative; z-index: 1; box-shadow: 0 12px 30px -10px rgba(0,0,0,.6); }
+.slide-flag-fallback { position: absolute; inset: 0; display: grid; place-items: center; font-size: 3.2rem; z-index: 0; }
+.slide-flag-badge { position: absolute; bottom: 0; right: 4px; z-index: 2; font-size: 1.35rem; background: var(--panel); border: 1px solid var(--line); border-radius: 50%; width: 34px; height: 34px; display: grid; place-items: center; }
+.modal-portrait-wrap { position: relative; width: 100px; height: 100px; margin-bottom: 10px; }
+.modal-portrait { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid var(--gold); position: relative; z-index: 1; }
+.modal-flag-fallback { position: absolute; inset: 0; display: grid; place-items: center; font-size: 2.4rem; z-index: 0; }
 .slide .card-era { display: inline-block; margin-bottom: 14px; }
 .slide h3 { font-size: 2rem; }
 .slide-meta { color: var(--gold); font-weight: 600; font-size: .9rem; margin-top: 6px; }

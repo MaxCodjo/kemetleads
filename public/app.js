@@ -47,8 +47,15 @@
   function openModal(id) {
     const l = leaders.find((x) => x.id === id);
     if (!l) return;
+    const img = (window.LEADER_IMAGES || {})[l.id];
+    const visual = img
+      ? `<div class="modal-portrait-wrap">
+           <span class="modal-flag-fallback">${l.flag}</span>
+           <img class="modal-portrait" src="${img}" alt="Portrait of ${l.name}" loading="lazy" onerror="this.style.display='none'">
+         </div>`
+      : `<div class="modal-flag">${l.flag}</div>`;
     modalContent.innerHTML = `
-      <div class="modal-flag">${l.flag}</div>
+      ${visual}
       <h2 id="modal-name">${l.name}</h2>
       <div class="modal-meta">${l.country} · ${l.years}</div>
       <div class="modal-role">${l.role}</div>
@@ -96,9 +103,17 @@
   let slideTimer = null;
 
   function slideHTML(l) {
+    const img = (window.LEADER_IMAGES || {})[l.id];
+    const visual = img
+      ? `<div class="slide-portrait-wrap">
+           <span class="slide-flag-fallback">${l.flag}</span>
+           <img class="slide-portrait" src="${img}" alt="Portrait of ${l.name}" loading="lazy" onerror="this.style.display='none'">
+           <span class="slide-flag-badge">${l.flag}</span>
+         </div>`
+      : `<span class="slide-flag">${l.flag}</span>`;
     return `
       <div class="slide" data-id="${l.id}">
-        <span class="slide-flag">${l.flag}</span>
+        ${visual}
         <span class="card-era ${l.era}">${l.era}</span>
         <h3>${l.name}</h3>
         <div class="slide-meta">${l.country} · ${l.years}</div>
