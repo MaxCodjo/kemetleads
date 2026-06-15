@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AfricaLeads — Understand Africa before it makes the news</title>
+  <meta name="description" content="AfricaLeads is the intelligence platform profiling the great leaders of Africa, past and present, with sharp political and business analysis for professionals and the diaspora." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark">AL</span> AfricaLeads</a>
+      <nav class="nav-links">
+        <a href="#leaders">Leaders</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#subscribe" class="btn btn-sm">Free briefing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Intelligence · Profiles · Legacy</p>
+        <h1>Understand Africa before it makes the news.</h1>
+        <p class="lede">
+          AfricaLeads profiles the great leaders of the continent — past and present — and delivers the political and business analysis that professionals and the diaspora can act on.
+        </p>
+        <div class="hero-cta">
+          <a href="#subscribe" class="btn btn-lg">Get the free weekly briefing →</a>
+          <a href="#leaders" class="btn btn-lg btn-ghost">Explore the leaders</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="stat-count">18</strong><span>Leaders profiled</span></div>
+          <div><strong>54</strong><span>Nations covered</span></div>
+          <div><strong>1900s→now</strong><span>Past & present</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUE -->
+    <section class="value">
+      <div class="value-card">
+        <h3>📊 Analysis, not headlines</h3>
+        <p>We don't just tell you what happened. We tell you why it matters, who's affected, and what's likely next — country by country.</p>
+      </div>
+      <div class="value-card">
+        <h3>🌍 Built for the diaspora</h3>
+        <p>Whether you're investing, advising, building, or staying rooted, AfricaLeads keeps you ahead of the curve from anywhere in the world.</p>
+      </div>
+      <div class="value-card">
+        <h3>🏛️ Legacy you can trust</h3>
+        <p>Honest profiles that celebrate greatness while telling the full story — the achievements and the complexity alike.</p>
+      </div>
+    </section>
+
+    <!-- LEADERS -->
+    <section id="leaders" class="leaders">
+      <div class="section-head">
+        <h2>The Leaders Collection</h2>
+        <p>The figures who shaped Africa — and those shaping it now. Click any leader to read the full profile.</p>
+      </div>
+
+      <div class="controls">
+        <div class="filters" id="filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="past">Past</button>
+          <button class="chip" data-filter="present">Present</button>
+        </div>
+        <input id="search" class="search" type="search" placeholder="Search by name, country, or theme…" aria-label="Search leaders" />
+      </div>
+
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>No leaders match your search.</p>
+    </section>
+
+    <!-- ANALYSIS / EDITORIAL -->
+    <section id="analysis" class="analysis">
+      <div class="section-head">
+        <h2>Why AfricaLeads exists</h2>
+      </div>
+      <div class="analysis-body">
+        <p>Most coverage of African leadership swings between two extremes: uncritical worship or dismissive caricature. Neither serves the people who actually need to understand the continent.</p>
+        <p>AfricaLeads takes a third path. Every profile follows the same discipline — <em>the rise, what they did, the full picture, and why it matters</em> — celebrating real greatness while refusing to look away from complexity. Liberation heroes who became autocrats. Reformers whose progress came at the cost of freedom. Builders whose success raises new questions.</p>
+        <p>That honesty is the product. It's what turns a directory of names into intelligence you can rely on — for business, for policy, for understanding where Africa is heading next.</p>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="pricing">
+      <div class="section-head">
+        <h2>Membership</h2>
+        <p>Start free. Upgrade when the insight earns its keep.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <h3>Free</h3>
+          <p class="price">$0</p>
+          <ul>
+            <li>Weekly briefing</li>
+            <li>Public leader profiles</li>
+            <li>1–2 analysis pieces / month</li>
+          </ul>
+          <a href="#subscribe" class="btn btn-block">Join free</a>
+        </div>
+        <div class="tier tier-featured">
+          <span class="badge">Most popular</span>
+          <h3>Pro</h3>
+          <p class="price">$15<span>/mo</span></p>
+          <ul>
+            <li>Full analysis archive</li>
+            <li>Complete leader database</li>
+            <li>Quarterly country risk outlooks</li>
+            <li>Signature annual report</li>
+          </ul>
+          <a href="#subscribe" class="btn btn-block">Start Pro</a>
+        </div>
+        <div class="tier">
+          <h3>Intelligence</h3>
+          <p class="price">$49<span>/mo</span></p>
+          <ul>
+            <li>Everything in Pro</li>
+            <li>Monthly + on-demand risk briefs</li>
+            <li>Decision-maker context</li>
+            <li>1 leadership cohort / year</li>
+          </ul>
+          <a href="#subscribe" class="btn btn-block">Go Intelligence</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIBE -->
+    <section id="subscribe" class="subscribe">
+      <div class="subscribe-inner">
+        <h2>Africa is moving fast. Don't read about it late.</h2>
+        <p>Join the free weekly briefing on the leaders and forces shaping the continent.</p>
+        <form id="subscribe-form" class="subscribe-form">
+          <input type="email" id="email" placeholder="you@example.com" required aria-label="Email address" />
+          <button type="submit" class="btn btn-lg">Subscribe free</button>
+        </form>
+        <p class="form-msg" id="form-msg" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="brand-mark">AL</span> AfricaLeads</p>
+    <p class="muted">Profiling the great leaders of Africa, past and present. Built as an independent intelligence platform.</p>
+    <p class="muted small">© <span id="year"></span> AfricaLeads. Profiles are editorial summaries for general information.</p>
+  </footer>
+
+  <!-- PROFILE MODAL -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <div id="modal-content"></div>
+    </article>
+  </div>
+
+  <script src="leaders.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
