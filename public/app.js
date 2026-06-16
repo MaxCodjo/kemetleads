@@ -104,23 +104,25 @@
 
   function slideHTML(l) {
     const img = (window.LEADER_IMAGES || {})[l.id];
-    const visual = img
-      ? `<div class="slide-portrait-wrap">
-           <span class="slide-flag-fallback">${l.flag}</span>
-           <img class="slide-portrait" src="${img}" alt="Portrait of ${l.name}" loading="lazy" onerror="this.style.display='none'">
+    const photo = img
+      ? `<div class="slide-photo">
+           <img src="${img}" alt="Portrait of ${l.name}" loading="lazy" onerror="this.closest('.slide-photo').classList.add('no-img')">
+           <span class="slide-photo-fallback">${l.flag}</span>
            <span class="slide-flag-badge">${l.flag}</span>
          </div>`
-      : `<span class="slide-flag">${l.flag}</span>`;
+      : `<div class="slide-photo no-img"><span class="slide-photo-fallback">${l.flag}</span></div>`;
     return `
       <div class="slide" data-id="${l.id}">
-        ${visual}
-        <span class="card-era ${l.era}">${l.era}</span>
-        <h3>${l.name}</h3>
-        <div class="slide-meta">${l.country} · ${l.years}</div>
-        <div class="slide-role">${l.role}</div>
-        <p class="slide-tagline">${l.tagline}</p>
-        <blockquote class="slide-quote">“${l.quote}”</blockquote>
-        <button class="btn btn-sm slide-cta" data-open-id="${l.id}">Read full profile →</button>
+        ${photo}
+        <div class="slide-body">
+          <span class="card-era ${l.era}">${l.era}</span>
+          <h3>${l.name}</h3>
+          <div class="slide-meta">${l.country} · ${l.years}</div>
+          <div class="slide-role">${l.role}</div>
+          <p class="slide-tagline">${l.tagline}</p>
+          <blockquote class="slide-quote">“${l.quote}”</blockquote>
+          <button class="btn btn-sm slide-cta" data-open-id="${l.id}">Read full profile →</button>
+        </div>
       </div>`;
   }
 

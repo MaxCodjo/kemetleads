@@ -1,5 +1,6 @@
-// Fetch freely-licensed portrait thumbnails from Wikipedia REST API and
-// write public/images.js as window.LEADER_IMAGES = { id: url, ... }.
+// Fetch HIGH-DEFINITION, freely-licensed portrait thumbnails from the Wikipedia
+// pageimages API (pithumbsize) and write public/images.js as
+// window.LEADER_IMAGES = { id: url, ... }.
 import { writeFileSync } from "node:fs";
 
 const MAP = {
@@ -24,16 +25,25 @@ const MAP = {
 };
 
 const UA = "KemetLeads/1.0 (https://kemetleads.com; contact@kemetleads.com)";
+const SIZE = 1000; // HD width
 
 async function fetchThumb(title) {
-  const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`;
-  const res = await fetch(url, { headers: { "User-Agent": UA, accept: "application/json" } });
-  if (!res.ok) throw new Error(`${title}: HTTP ${res.status}`);
+  const u = new URL("https://en.wikipedia.org/w/api.php");
+  u.search = new URLSearchParams({
+    action: "query",
+    format: "json",
+    prop: "pageimages",
+    piprop: "thumbnail",
+    pithumbsize: String(SIZE),
+    titles: title,
+    redirects: "1",
+  }).toString();
+  const res = await fetch(u, { headers: { "User-Agent": UA, accept: "application/json" } });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const data = await res.json();
-  let src = data?.thumbnail?.source || data?.originalimage?.source || null;
-  // Upscale Wikimedia thumbnail to ~500px for a crisp portrait.
-  if (src) src = src.replace(/\/\d+px-/, "/500px-");
-  return src;
+  const pages = data?.query?.pages || {};
+  const first = Object.values(pages)[0];
+  return first?.thumbnail?.source || null;
 }
 
 const out = {};
@@ -42,7 +52,8 @@ for (const [id, title] of Object.entries(MAP)) {
     const src = await fetchThumb(title);
     if (src) {
       out[id] = src;
-      console.log(`✓ ${id}: ${src}`);
+      const w = (src.match(/\/(\d+)px-/) || [])[1] || "orig";
+      console.log(`✓ ${id}: ${w}px`);
     } else {
       console.log(`– ${id}: no image`);
     }
@@ -51,9 +62,9 @@ for (const [id, title] of Object.entries(MAP)) {
   }
 }
 
-const banner = "// KemetLeads — portrait URLs (Wikimedia Commons / Wikipedia, freely licensed). Auto-generated.\n";
+const banner = "// KemetLeads — HD portrait URLs (Wikimedia Commons / Wikipedia, freely licensed). Auto-generated.\n";
 writeFileSync(
   new URL("./public/images.js", import.meta.url),
   banner + "window.LEADER_IMAGES = " + JSON.stringify(out, null, 2) + ";\n"
 );
-console.log(`\nWrote ${Object.keys(out).length}/${Object.keys(MAP).length} images to public/images.js`);
+console.log(`\nWrote ${Object.keys(out).length}/${Object.keys(MAP).length} HD images to public/images.js`);
