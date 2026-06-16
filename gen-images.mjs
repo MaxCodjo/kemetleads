@@ -22,6 +22,18 @@ const MAP = {
   dangote: "Aliko Dangote",
   adichie: "Chimamanda Ngozi Adichie",
   etoo: "Samuel Eto'o",
+  menelik: "Menelik II",
+  nasser: "Gamal Abdel Nasser",
+  biko: "Steve Biko",
+  tutu: "Desmond Tutu",
+  cabral: "Amílcar Cabral",
+  mugabe: "Robert Mugabe",
+  yaaasantewaa: "Yaa Asantewaa",
+  abiy: "Abiy Ahmed",
+  tinubu: "Bola Tinubu",
+  weah: "George Weah",
+  soyinka: "Wole Soyinka",
+  moibrahim: "Mo Ibrahim",
 };
 
 const UA = "KemetLeads/1.0 (https://kemetleads.com; contact@kemetleads.com)";

@@ -17,5 +17,16 @@ window.LEADER_IMAGES = {
   "adesina": "https://upload.wikimedia.org/wikipedia/commons/6/64/Akinwumi_Adesina_-_2014_%28cropped%29.jpg",
   "dangote": "https://upload.wikimedia.org/wikipedia/commons/9/99/Al_Shabani_at_the_acquisition_of_Dangote_Cement_by_ICD_in_2014_%28cropped%29.jpg",
   "adichie": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Chimamanda_Ngozi_Adichie_%282015%29.png",
-  "etoo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Samuel_2011.jpg"
+  "etoo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Samuel_2011.jpg",
+  "menelik": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Emperor_Menelik_II.png/1280px-Emperor_Menelik_II.png",
+  "nasser": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Official_Portrait_-_Gamal_Abdel_Nasser.jpg",
+  "biko": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Steve_Biko_on_Flyer_for_Steve_Biko_Memorial_at_the_Carver_Cultural_Center.jpg/1280px-Steve_Biko_on_Flyer_for_Steve_Biko_Memorial_at_the_Carver_Cultural_Center.jpg",
+  "tutu": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Archbishop-Tutu-medium.jpg",
+  "cabral": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Cabral_2.png/1280px-Cabral_2.png",
+  "mugabe": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Robert_Mugabe_Official_Portrait_%284x5_cropped%29.jpg/1280px-Robert_Mugabe_Official_Portrait_%284x5_cropped%29.jpg",
+  "abiy": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Prime_Minister_of_Ethiopia_Abiy_Ahmed_Ali_%28cropped%29.jpg",
+  "tinubu": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Bola_Tinubu_portrait.jpg/1280px-Bola_Tinubu_portrait.jpg",
+  "weah": "https://upload.wikimedia.org/wikipedia/commons/5/53/Clar_Weah%2C_George_Weah%2C_Joe_Biden%2C_Jill_Biden_%28cropped%29.jpg",
+  "soyinka": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Wole_Soyinka_in_2018_%283x4_cropped%29.jpg/1280px-Wole_Soyinka_in_2018_%283x4_cropped%29.jpg",
+  "moibrahim": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Mo_Ibrahim.jpg"
 };
