@@ -259,6 +259,39 @@ window.LEADERS = [
     quote: "If you, the men of Ashanti, will not go forward, then we, the women, will."
   },
 
+  {
+    id: "gaddafi",
+    name: "Muammar Gaddafi",
+    country: "Libya",
+    flag: "🇱🇾",
+    era: "past",
+    category: "Politics & Governance",
+    years: "1942–2011",
+    role: "Leader of Libya (1969–2011)",
+    tagline: "The mercurial colonel who ruled Libya for 42 years and dreamed of a United States of Africa.",
+    rise: "A young army officer, Gaddafi seized power in a 1969 coup, toppling the monarchy and styling himself the guide of a stateless 'people's republic'.",
+    did: "He used Libya's oil wealth to fund generous social programs at home and sweeping pan-African ambitions abroad, bankrolling the African Union and championing a 'United States of Africa'.",
+    fullPicture: "His rule was deeply authoritarian — crushing dissent, sponsoring militant groups and attacks abroad, and isolating Libya for decades. He was captured and killed in the 2011 NATO-backed uprising, after which Libya fell into lasting chaos.",
+    why: "Gaddafi embodies the paradox of the strongman — pan-African benefactor and brutal autocrat at once — and his fall warns that toppling a tyrant without a plan can be its own catastrophe.",
+    quote: "We want one African union government, one African army, and a single African currency."
+  },
+  {
+    id: "kerekou",
+    name: "Mathieu Kérékou",
+    country: "Benin",
+    flag: "🇧🇯",
+    era: "past",
+    category: "Politics & Governance",
+    years: "1933–2015",
+    role: "President of Benin (1972–1991, 1996–2006)",
+    tagline: "The dictator who became a democrat — and accepted defeat at the ballot box.",
+    rise: "An army officer, Kérékou seized power in Benin (then Dahomey) in a 1972 coup and ran a Marxist-Leninist one-party state for nearly two decades.",
+    did: "Facing economic collapse and popular pressure, he convened a landmark 1990 national conference, legalized the opposition, and in 1991 became one of the first African leaders to peacefully hand over power after losing an election.",
+    fullPicture: "His early rule was repressive and economically ruinous; yet he returned to win the presidency democratically in 1996 and 2006, again leaving office peacefully when his terms ended.",
+    why: "Kérékou's arc — from coup leader to twice-elected president who respected term limits — made Benin an unlikely model of democratic transition in West Africa.",
+    quote: "The branch will not break in the arms of the chameleon."
+  },
+
   // ---------------- PRESENT ----------------
   {
     id: "sirleaf",

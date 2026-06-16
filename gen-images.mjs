@@ -34,6 +34,8 @@ const MAP = {
   weah: "George Weah",
   soyinka: "Wole Soyinka",
   moibrahim: "Mo Ibrahim",
+  gaddafi: "Muammar Gaddafi",
+  kerekou: "Mathieu Kérékou",
 };
 
 const UA = "KemetLeads/1.0 (https://kemetleads.com; contact@kemetleads.com)";

@@ -13,7 +13,7 @@ window.LEADER_IMAGES = {
   "okonjo-iweala": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Ngozi_Okonjo-Iweala_takes_over_as_new_WTO_Director-General%2C_1_March_2021_%2850993534756%29_%28cropped%29.jpg/1280px-Ngozi_Okonjo-Iweala_takes_over_as_new_WTO_Director-General%2C_1_March_2021_%2850993534756%29_%28cropped%29.jpg",
   "kagame": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Paul_Kagame_2024_%28cropped%29.jpg/1280px-Paul_Kagame_2024_%28cropped%29.jpg",
   "ramaphosa": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Official_Portrait_of_President_Cytil_Ramaphosa_%E2%80%94_2019.jpg",
-  "samia": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/International_leaders_sign_joint_statement_at_COP26_%2851649202102%29_%28Suluhu_crop%29.jpg/1280px-International_leaders_sign_joint_statement_at_COP26_%2851649202102%29_%28Suluhu_crop%29.jpg",
+  "samia": "https://upload.wikimedia.org/wikipedia/commons/5/51/Samia_Suluhu_at_the_XXIX_St_Petersburg_International_Economic_Forum_-_2026_%28cropped%29.jpg",
   "adesina": "https://upload.wikimedia.org/wikipedia/commons/6/64/Akinwumi_Adesina_-_2014_%28cropped%29.jpg",
   "dangote": "https://upload.wikimedia.org/wikipedia/commons/9/99/Al_Shabani_at_the_acquisition_of_Dangote_Cement_by_ICD_in_2014_%28cropped%29.jpg",
   "adichie": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Chimamanda_Ngozi_Adichie_%282015%29.png",
@@ -28,5 +28,7 @@ window.LEADER_IMAGES = {
   "tinubu": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Bola_Tinubu_portrait.jpg/1280px-Bola_Tinubu_portrait.jpg",
   "weah": "https://upload.wikimedia.org/wikipedia/commons/5/53/Clar_Weah%2C_George_Weah%2C_Joe_Biden%2C_Jill_Biden_%28cropped%29.jpg",
   "soyinka": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Wole_Soyinka_in_2018_%283x4_cropped%29.jpg/1280px-Wole_Soyinka_in_2018_%283x4_cropped%29.jpg",
-  "moibrahim": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Mo_Ibrahim.jpg"
+  "moibrahim": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Mo_Ibrahim.jpg",
+  "gaddafi": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Muammar_al-Gaddafi_at_the_AU_summit.jpg/1280px-Muammar_al-Gaddafi_at_the_AU_summit.jpg",
+  "kerekou": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Mathieu_K%C3%A9r%C3%A9kou_2006Feb10_%28cropped%29.JPG"
 };
