@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Leaders Collection — KemetLeads</title>
+  <meta name="description" content="The full KemetLeads collection of great African leaders, past and present, arranged by theme and era." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">KL</span> KemetLeads</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="leaders.html">Leaders</a>
+        <a href="index.html#news">News</a>
+        <a href="index.html#analysis">Analysis</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#subscribe" class="btn btn-sm">Free briefing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- PAGE HEADER -->
+    <section class="page-head">
+      <div class="page-head-inner">
+        <p class="eyebrow">The Collection</p>
+        <h1>Great Leaders of Africa</h1>
+        <p class="lede">Past and present — the liberators, builders, thinkers, and reformers who shaped a continent. Arranged by group. Click any leader for the full profile.</p>
+      </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section class="collection">
+      <div class="controls">
+        <div class="filters" id="groupmode">
+          <button class="chip active" data-mode="theme">By theme</button>
+          <button class="chip" data-mode="era">By era</button>
+        </div>
+        <input id="search" class="search" type="search" placeholder="Search by name, country, or theme…" aria-label="Search leaders" />
+      </div>
+
+      <div id="collection"></div>
+      <p class="empty" id="empty" hidden>No leaders match your search.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="brand-mark">KL</span> KemetLeads</p>
+    <p class="muted">Profiling the great leaders of Africa, past and present, with commentary on the news that matters. An independent intelligence platform.</p>
+    <p class="muted small">© <span id="year"></span> KemetLeads. Profiles and commentary are editorial summaries for general information.</p>
+    <p class="muted small">Portraits via Wikimedia Commons, used under their respective public-domain or Creative Commons licenses.</p>
+  </footer>
+
+  <!-- PROFILE MODAL -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <div id="modal-content"></div>
+    </article>
+  </div>
+
+  <script src="leaders.js"></script>
+  <script src="images.js"></script>
+  <script src="leaders-ui.js"></script>
+  <script src="leaders-page.js"></script>
+</body>
+</html>

@@ -17,7 +17,7 @@
       <a class="brand" href="#top"><span class="brand-mark">KL</span> KemetLeads</a>
       <nav class="nav-links">
         <a href="#showcase">Featured</a>
-        <a href="#leaders">Leaders</a>
+        <a href="leaders.html">Leaders</a>
         <a href="#news">News</a>
         <a href="#analysis">Analysis</a>
         <a href="#pricing">Pricing</a>
@@ -37,7 +37,7 @@
         </p>
         <div class="hero-cta">
           <a href="#subscribe" class="btn btn-lg">Get the free weekly briefing →</a>
-          <a href="#leaders" class="btn btn-lg btn-ghost">Explore the leaders</a>
+          <a href="leaders.html" class="btn btn-lg btn-ghost">Explore the leaders</a>
         </div>
         <div class="hero-stats">
           <div><strong id="stat-count">18</strong><span>Leaders profiled</span></div>
@@ -80,24 +80,15 @@
       </div>
     </section>
 
-    <!-- LEADERS -->
-    <section id="leaders" class="leaders">
+    <!-- LEADERS CTA -->
+    <section id="leaders" class="leaders-cta">
       <div class="section-head">
         <h2>The Leaders Collection</h2>
-        <p>The figures who shaped Africa — and those shaping it now. Click any leader to read the full profile.</p>
+        <p>Eighteen profiles of the figures who shaped Africa — and those shaping it now — arranged by theme and era. Honest, balanced, and built to be explored.</p>
       </div>
-
-      <div class="controls">
-        <div class="filters" id="filters">
-          <button class="chip active" data-filter="all">All</button>
-          <button class="chip" data-filter="past">Past</button>
-          <button class="chip" data-filter="present">Present</button>
-        </div>
-        <input id="search" class="search" type="search" placeholder="Search by name, country, or theme…" aria-label="Search leaders" />
+      <div class="leaders-cta-actions">
+        <a href="leaders.html" class="btn btn-lg">Explore the full collection →</a>
       </div>
-
-      <div class="grid" id="grid"></div>
-      <p class="empty" id="empty" hidden>No leaders match your search.</p>
     </section>
 
     <!-- NEWS / COMMENTARY -->
@@ -196,6 +187,7 @@
 
   <script src="leaders.js"></script>
   <script src="images.js"></script>
+  <script src="leaders-ui.js"></script>
   <script src="news.js"></script>
   <script src="app.js"></script>
 </body>
