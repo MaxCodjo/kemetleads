@@ -15,6 +15,7 @@
 
   // Display order for thematic groups.
   const THEME_ORDER = [
+    "Empires & Antiquity",
     "Politics & Liberation",
     "Politics & Governance",
     "Global Institutions",
