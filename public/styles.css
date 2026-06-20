@@ -114,7 +114,7 @@ section { padding: 96px 24px; }
   border: 2px solid var(--gold); border-radius: var(--radius); overflow: hidden;
   background: var(--bg-2); box-shadow: 0 14px 34px -16px rgba(17, 17, 17, 0.45);
 }
-.slide-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
+.slide-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 .slide-photo.no-img img { display: none; }
 .slide-photo-fallback { position: absolute; inset: 0; display: none; place-items: center; font-size: 5.5rem; }
 .slide-photo.no-img .slide-photo-fallback { display: grid; }
@@ -160,7 +160,7 @@ section { padding: 96px 24px; }
 }
 .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--gold); }
 .card-photo { position: relative; width: 100%; aspect-ratio: 5 / 4; overflow: hidden; background: var(--bg-2); border-bottom: 1px solid var(--line); }
-.card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; transition: transform .35s ease; }
+.card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform .35s ease; }
 .card:hover .card-photo img { transform: scale(1.05); }
 .card-photo.no-img img { display: none; }
 .card-photo-fallback { position: absolute; inset: 0; display: none; place-items: center; font-size: 3.4rem; }
@@ -246,6 +246,9 @@ section { padding: 96px 24px; }
 .footer { text-align: center; padding: 56px 24px; background: var(--ink); color: #fff; border-top: 2px solid var(--gold); }
 .footer p { display: flex; gap: 11px; align-items: center; justify-content: center; font-family: "Fraunces", serif; font-size: 1.15rem; }
 .footer .brand-mark { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.footer-social { display: flex; gap: 14px; justify-content: center; margin: 18px 0 6px; }
+.footer-social a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(244,236,224,0.22); color: #f4ece0; transition: all .18s ease; }
+.footer-social a:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); transform: translateY(-2px); }
 .footer .muted { color: #b3aa9c; font-family: "Inter", sans-serif; font-size: .95rem; margin-top: 12px; }
 .footer .small { font-size: .8rem; opacity: .75; }
 

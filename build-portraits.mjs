@@ -27,8 +27,10 @@ for (const [id, url] of Object.entries(src)) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const buf = Buffer.from(await res.arrayBuffer());
     const outName = `${id}.webp`;
+    // Square crop centered on the most salient region (the face) so heads sit
+    // centered in every frame (card, slideshow, circular modal).
     await sharp(buf)
-      .resize({ width: 700, height: 875, fit: "cover", position: "top" })
+      .resize({ width: 800, height: 800, fit: "cover", position: sharp.strategy.attention })
       .webp({ quality: 82 })
       .toFile(path.join(outDir, outName));
     local[id] = `portraits/${outName}`;
