@@ -18,23 +18,33 @@ const raw = readFileSync(imagesFile, "utf8")
   .replace(/;\s*$/, "");
 const src = JSON.parse(raw);
 const UA = "KemetLeads/1.0 (https://kemetleads.com)";
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Fetch with retry/back-off so Wikimedia rate limits (HTTP 429) don't drop images.
+async function fetchBuf(url) {
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    const res = await fetch(url, { headers: { "User-Agent": UA } });
+    if (res.ok) return Buffer.from(await res.arrayBuffer());
+    if (res.status === 429 && attempt < 4) { await sleep(attempt * 2500); continue; }
+    throw new Error(`HTTP ${res.status}`);
+  }
+}
 
 const local = {};
 for (const [id, url] of Object.entries(src)) {
   if (!/^https?:\/\//.test(url)) { local[id] = url; console.log(`= ${id}: déjà local`); continue; }
   try {
-    const res = await fetch(url, { headers: { "User-Agent": UA } });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const buf = Buffer.from(await res.arrayBuffer());
+    const buf = await fetchBuf(url);
     const outName = `${id}.webp`;
-    // Square crop centered on the most salient region (the face) so heads sit
-    // centered in every frame (card, slideshow, circular modal).
+    // Portrait 4:5 crop centered on the most salient region (the face), so the
+    // full head AND neck/shoulders stay visible in the card frame.
     await sharp(buf)
-      .resize({ width: 800, height: 800, fit: "cover", position: sharp.strategy.attention })
+      .resize({ width: 720, height: 900, fit: "cover", position: sharp.strategy.attention })
       .webp({ quality: 82 })
       .toFile(path.join(outDir, outName));
     local[id] = `portraits/${outName}`;
     console.log(`✓ ${id} → portraits/${outName}`);
+    await sleep(250); // be gentle with Wikimedia
   } catch (e) {
     local[id] = url; // garde l'URL distante en secours
     console.log(`✗ ${id}: ${e.message} (conserve l'URL distante)`);

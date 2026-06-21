@@ -159,8 +159,8 @@ section { padding: 96px 24px; }
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--gold); }
-.card-photo { position: relative; width: 100%; aspect-ratio: 5 / 4; overflow: hidden; background: var(--bg-2); border-bottom: 1px solid var(--line); }
-.card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform .35s ease; }
+.card-photo { position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; background: var(--bg-2); border-bottom: 1px solid var(--line); }
+.card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform .35s ease; }
 .card:hover .card-photo img { transform: scale(1.05); }
 .card-photo.no-img img { display: none; }
 .card-photo-fallback { position: absolute; inset: 0; display: none; place-items: center; font-size: 3.4rem; }
