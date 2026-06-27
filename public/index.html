@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
 </head>
 <body>
@@ -63,36 +63,25 @@
             <a href="leaders.html" class="btn btn-lg btn-ghost">Explore the leaders</a>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <img class="hv-main" src="portraits/mandela.webp" alt="" width="320" height="440" />
-          <img src="portraits/hatshepsut.webp" alt="" width="200" height="213" />
-          <img src="portraits/mansamusa.webp" alt="" width="200" height="213" />
+        <div class="hero-show" id="showcase">
+          <div class="slideshow" id="slideshow">
+            <button class="slide-nav prev" id="slide-prev" aria-label="Previous leader">‹</button>
+            <div class="slides" id="slides"></div>
+            <button class="slide-nav next" id="slide-next" aria-label="Next leader">›</button>
+          </div>
+          <div class="slide-footer">
+            <div class="slide-controls">
+              <button class="slide-toggle" id="slide-toggle" aria-label="Pause slideshow">❚❚</button>
+              <span class="slide-counter" id="slide-counter" aria-live="polite">1 / 72</span>
+            </div>
+            <div class="slide-dots" id="slide-dots"></div>
+          </div>
         </div>
       </div>
       <div class="hero-stats">
         <div><strong id="stat-count">18</strong><span>Leaders profiled</span></div>
         <div><strong>54</strong><span>Nations covered</span></div>
         <div><strong>1900s→now</strong><span>Past & present</span></div>
-      </div>
-    </section>
-
-    <!-- FEATURED SLIDESHOW -->
-    <section id="showcase" class="showcase">
-      <div class="section-head">
-        <h2>Featured Leaders</h2>
-        <p>A rotating showcase of the figures who shaped Africa — and those shaping it now.</p>
-      </div>
-      <div class="slideshow" id="slideshow">
-        <button class="slide-nav prev" id="slide-prev" aria-label="Previous leader">‹</button>
-        <div class="slides" id="slides"></div>
-        <button class="slide-nav next" id="slide-next" aria-label="Next leader">›</button>
-      </div>
-      <div class="slide-footer">
-        <div class="slide-controls">
-          <button class="slide-toggle" id="slide-toggle" aria-label="Pause slideshow">❚❚</button>
-          <span class="slide-counter" id="slide-counter" aria-live="polite">1 / 18</span>
-        </div>
-        <div class="slide-dots" id="slide-dots"></div>
       </div>
     </section>
 
