@@ -95,6 +95,7 @@
     LANG = l;
     try { localStorage.setItem("lang", l); } catch (_e) {}
     apply();
+    window.dispatchEvent(new CustomEvent("kl-lang", { detail: l }));
   }
 
   document.addEventListener("DOMContentLoaded", () => {
