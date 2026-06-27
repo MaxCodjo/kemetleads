@@ -235,6 +235,12 @@ section { padding: 96px 24px; }
 .analysis-body p { color: #d8d2c6; font-size: 1.12rem; margin-bottom: 20px; }
 .analysis-body em { color: var(--gold); }
 
+/* Analysis page — light editorial body */
+.editorial { max-width: 760px; margin: 0 auto; }
+.editorial p { color: var(--ink-2); font-size: 1.12rem; margin-bottom: 20px; }
+.editorial em { color: var(--gold-deep); font-style: italic; }
+.editorial-cta { margin-top: 36px; }
+
 /* Pricing */
 .tiers { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
 .tiers-2 { max-width: 760px; grid-template-columns: repeat(2, 1fr); }

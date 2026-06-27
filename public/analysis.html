@@ -11,18 +11,18 @@
     gtag('js', new Date());
     gtag('config', 'G-CZ21HTW6VD');
   </script>
-  <title>The Leaders Collection — KemetLeads</title>
-  <meta name="description" content="The full KemetLeads collection of great African leaders, past and present, arranged by theme and era." />
-  <link rel="canonical" href="https://www.kemetleads.com/leaders.html" />
+  <title>Analysis — KemetLeads</title>
+  <meta name="description" content="The thinking behind KemetLeads — how we read African leadership, and why honest, disciplined analysis is the product." />
+  <link rel="canonical" href="https://www.kemetleads.com/analysis.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="KemetLeads" />
-  <meta property="og:title" content="The Leaders Collection — KemetLeads" />
-  <meta property="og:description" content="The full collection of great African leaders, past and present, arranged by theme and era." />
-  <meta property="og:url" content="https://www.kemetleads.com/leaders.html" />
+  <meta property="og:title" content="Analysis — KemetLeads" />
+  <meta property="og:description" content="How KemetLeads reads African leadership — and why honesty is the product." />
+  <meta property="og:url" content="https://www.kemetleads.com/analysis.html" />
   <meta property="og:image" content="https://www.kemetleads.com/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Leaders Collection — KemetLeads" />
-  <meta name="twitter:description" content="Great African leaders, past and present — arranged by theme and era." />
+  <meta name="twitter:title" content="Analysis — KemetLeads" />
+  <meta name="twitter:description" content="How KemetLeads reads African leadership — and why honesty is the product." />
   <meta name="twitter:image" content="https://www.kemetleads.com/og.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -52,24 +52,22 @@
     <!-- PAGE HEADER -->
     <section class="page-head">
       <div class="page-head-inner">
-        <p class="eyebrow">The Collection</p>
-        <h1>Great Leaders of Africa</h1>
-        <p class="lede">Past and present — the liberators, builders, thinkers, and reformers who shaped a continent. Arranged by group. Click any leader for the full profile.</p>
+        <p class="eyebrow">Editorial</p>
+        <h1>Why KemetLeads exists</h1>
+        <p class="lede">The thinking behind the platform — how we read African leadership, and why honesty is the product.</p>
       </div>
     </section>
 
-    <!-- COLLECTION -->
-    <section class="collection">
-      <div class="controls">
-        <div class="filters" id="groupmode">
-          <button class="chip active" data-mode="theme">By theme</button>
-          <button class="chip" data-mode="era">By era</button>
+    <!-- EDITORIAL -->
+    <section class="editorial-section">
+      <div class="editorial">
+        <p>Most coverage of African leadership swings between two extremes: uncritical worship or dismissive caricature. Neither serves the people who actually need to understand the continent.</p>
+        <p>KemetLeads takes a third path. Every profile follows the same discipline — <em>the rise, what they did, the full picture, and why it matters</em> — celebrating real greatness while refusing to look away from complexity. Liberation heroes who became autocrats. Reformers whose progress came at the cost of freedom. Builders whose success raises new questions.</p>
+        <p>That honesty is the product. It's what turns a directory of names into intelligence you can rely on — for business, for policy, for understanding where Africa is heading next.</p>
+        <div class="editorial-cta">
+          <a href="leaders.html" class="btn btn-lg">Explore the leaders →</a>
         </div>
-        <input id="search" class="search" type="search" placeholder="Search by name, country, or theme…" aria-label="Search leaders" />
       </div>
-
-      <div id="collection"></div>
-      <p class="empty" id="empty" hidden>No leaders match your search.</p>
     </section>
   </main>
 
@@ -87,20 +85,8 @@
     <p class="muted small">Portraits via Wikimedia Commons, used under their respective public-domain or Creative Commons licenses.</p>
   </footer>
 
-  <!-- PROFILE MODAL -->
-  <div class="modal" id="modal" hidden>
-    <div class="modal-backdrop" data-close></div>
-    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-name">
-      <button class="modal-close" data-close aria-label="Close">×</button>
-      <div id="modal-content"></div>
-    </article>
-  </div>
-
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script src="nav.js?v=2"></script>
-  <script src="leaders.js"></script>
-  <script src="images.js"></script>
-  <script src="leaders-ui.js"></script>
-  <script src="leaders-page.js"></script>
   <script src="reveal.js?v=1"></script>
 </body>
 </html>
