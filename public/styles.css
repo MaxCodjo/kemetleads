@@ -275,6 +275,8 @@ section { padding: 96px 24px; }
 .footer-social a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(244,236,224,0.22); color: #f4ece0; transition: all .18s ease; }
 .footer-social a:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); transform: translateY(-2px); }
 .footer .muted { color: #b3aa9c; font-family: "Inter", sans-serif; font-size: .95rem; margin-top: 12px; }
+.footer-contact { color: #f4ece0; border-bottom: 1px solid rgba(244, 236, 224, 0.3); transition: color .15s, border-color .15s; }
+.footer-contact:hover { color: var(--gold); border-color: var(--gold); }
 .footer .small { font-size: .8rem; opacity: .75; }
 
 /* Modal */
