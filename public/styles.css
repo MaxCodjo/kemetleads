@@ -203,9 +203,6 @@ section { padding: 96px 24px; }
 .card-cat { margin-top: auto; font-size: .74rem; color: #998f80; text-transform: uppercase; letter-spacing: .1em; padding-top: 8px; border-top: 1px solid var(--line); }
 .empty { text-align: center; color: var(--muted); max-width: var(--maxw); margin: 30px auto 0; }
 
-/* Leaders CTA (homepage) */
-.leaders-cta { text-align: center; background: var(--bg); }
-.leaders-cta-actions { display: flex; justify-content: center; }
 
 /* Leaders collection page */
 .page-head { background: var(--bg-2); border-bottom: 1px solid var(--line); box-shadow: 0 1px 0 0 var(--gold); padding: 84px 24px 66px; text-align: center; }
