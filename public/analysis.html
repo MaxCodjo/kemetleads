@@ -37,7 +37,7 @@
       <nav class="nav-links" id="nav-links">
         <a href="index.html">Home</a>
         <a href="leaders.html">Leaders</a>
-        <a href="index.html#news">News</a>
+        <a href="analysis.html#news">News</a>
         <a href="analysis.html">Analysis</a>
         <a href="index.html#pricing">Pricing</a>
         <a href="index.html#subscribe" class="btn btn-sm">Free briefing</a>
@@ -69,6 +69,15 @@
         </div>
       </div>
     </section>
+
+    <!-- NEWS / COMMENTARY -->
+    <section id="news" class="news">
+      <div class="section-head">
+        <h2>The Brief — our take on the news</h2>
+        <p>We don't just report what happened. Here's what it means, and why it matters — selected stories with the KemetLeads take.</p>
+      </div>
+      <div class="news-list" id="news-list"></div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -86,6 +95,8 @@
   </footer>
 
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="news.js"></script>
+  <script src="news-render.js?v=1"></script>
   <script src="nav.js?v=2"></script>
   <script src="reveal.js?v=1"></script>
 </body>
