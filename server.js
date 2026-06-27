@@ -80,6 +80,21 @@ app.post("/api/subscribe", (req, res) => {
   }
 });
 
+/* ---------- Private subscriber export (CSV) ---------- */
+// ponytail: query-string key guard — fine for a low-traffic admin link.
+// Upgrade to a header/token + rate limit if the list ever gets sensitive.
+const listSubs = db.prepare("SELECT email, created_at FROM subscribers ORDER BY created_at DESC");
+app.get("/api/subscribers", (req, res) => {
+  if (!process.env.ADMIN_KEY || req.query.key !== process.env.ADMIN_KEY) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+  const rows = listSubs.all();
+  const csv = "email,created_at\n" + rows.map((r) => `${r.email},${r.created_at}`).join("\n");
+  res.setHeader("Content-Type", "text/csv; charset=utf-8");
+  res.setHeader("Content-Disposition", "attachment; filename=kemetleads-subscribers.csv");
+  res.send(csv);
+});
+
 app.get("/healthz", (_req, res) => {
   let subscribers = null;
   try { subscribers = countSubs.get().n; } catch (_e) {}
