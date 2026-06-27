@@ -14,6 +14,8 @@
   const counterEl = document.getElementById("slide-counter");
   let slideIndex = 0;
   let slideTimer = null;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let playing = false;
 
   function slideHTML(l) {
     const img = (window.LEADER_IMAGES || {})[l.id];
@@ -60,6 +62,16 @@
     if (slideTimer) clearInterval(slideTimer);
     slideTimer = null;
   }
+  const toggleBtn = document.getElementById("slide-toggle");
+  function setPlaying(on) {
+    playing = on;
+    if (on) startAuto();
+    else stopAuto();
+    if (toggleBtn) {
+      toggleBtn.textContent = on ? "❚❚" : "▶";
+      toggleBtn.setAttribute("aria-label", on ? "Pause slideshow" : "Play slideshow");
+    }
+  }
 
   if (slidesEl && leaders.length) {
     slidesEl.innerHTML = leaders.map(slideHTML).join("");
@@ -67,15 +79,17 @@
       .map((_, i) => `<button class="dot" data-i="${i}" aria-label="Go to leader ${i + 1}"></button>`)
       .join("");
     showSlide(0);
-    startAuto();
+    setPlaying(!reduceMotion);
+    if (toggleBtn) toggleBtn.addEventListener("click", () => setPlaying(!playing));
 
-    document.getElementById("slide-next").addEventListener("click", () => { nextSlide(); startAuto(); });
-    document.getElementById("slide-prev").addEventListener("click", () => { prevSlide(); startAuto(); });
+    const keepPlaying = () => { if (playing) startAuto(); };
+    document.getElementById("slide-next").addEventListener("click", () => { nextSlide(); keepPlaying(); });
+    document.getElementById("slide-prev").addEventListener("click", () => { prevSlide(); keepPlaying(); });
     dotsEl.addEventListener("click", (e) => {
       const dot = e.target.closest(".dot");
       if (!dot) return;
       showSlide(parseInt(dot.dataset.i, 10));
-      startAuto();
+      keepPlaying();
     });
     slidesEl.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-open-id]");
@@ -85,12 +99,12 @@
     });
     const shell = document.getElementById("slideshow");
     shell.addEventListener("mouseenter", stopAuto);
-    shell.addEventListener("mouseleave", startAuto);
+    shell.addEventListener("mouseleave", keepPlaying);
     document.addEventListener("keydown", (e) => {
       const typing = /^(INPUT|TEXTAREA)$/.test(document.activeElement?.tagName || "");
       if (typing || !modal.hidden) return;
-      if (e.key === "ArrowRight") { nextSlide(); startAuto(); }
-      if (e.key === "ArrowLeft") { prevSlide(); startAuto(); }
+      if (e.key === "ArrowRight") { nextSlide(); keepPlaying(); }
+      if (e.key === "ArrowLeft") { prevSlide(); keepPlaying(); }
     });
   }
 

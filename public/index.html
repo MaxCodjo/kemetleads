@@ -13,10 +13,21 @@
   </script>
   <title>KemetLeads — Understand Africa before it makes the news</title>
   <meta name="description" content="KemetLeads is the intelligence platform profiling the great leaders of Africa, past and present, with selected news commentary and sharp political and business analysis for professionals and the diaspora." />
+  <link rel="canonical" href="https://www.kemetleads.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="KemetLeads" />
+  <meta property="og:title" content="KemetLeads — Understand Africa before it makes the news" />
+  <meta property="og:description" content="The intelligence platform profiling the great leaders of Africa, past and present — with sharp commentary and analysis for professionals and the diaspora." />
+  <meta property="og:url" content="https://www.kemetleads.com/" />
+  <meta property="og:image" content="https://www.kemetleads.com/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KemetLeads — Understand Africa before it makes the news" />
+  <meta name="twitter:description" content="The great leaders of Africa, past and present — intelligence, profiles, and analysis." />
+  <meta name="twitter:image" content="https://www.kemetleads.com/og.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
 </head>
 <body>
@@ -41,20 +52,27 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
-        <p class="eyebrow">Intelligence · Profiles · Legacy</p>
-        <h1>Understand Africa before it makes the news.</h1>
-        <p class="lede">
-          KemetLeads profiles the great leaders of the continent — past and present — comments on the news that matters, and delivers the political and business analysis that professionals and the diaspora can act on.
-        </p>
-        <div class="hero-cta">
-          <a href="#subscribe" class="btn btn-lg">Get the free weekly briefing →</a>
-          <a href="leaders.html" class="btn btn-lg btn-ghost">Explore the leaders</a>
+        <div class="hero-copy">
+          <p class="eyebrow">Intelligence · Profiles · Legacy</p>
+          <h1>Understand Africa before it makes the news.</h1>
+          <p class="lede">
+            KemetLeads profiles the great leaders of the continent — past and present — comments on the news that matters, and delivers the political and business analysis that professionals and the diaspora can act on.
+          </p>
+          <div class="hero-cta">
+            <a href="#subscribe" class="btn btn-lg">Get the free weekly briefing →</a>
+            <a href="leaders.html" class="btn btn-lg btn-ghost">Explore the leaders</a>
+          </div>
         </div>
-        <div class="hero-stats">
-          <div><strong id="stat-count">18</strong><span>Leaders profiled</span></div>
-          <div><strong>54</strong><span>Nations covered</span></div>
-          <div><strong>1900s→now</strong><span>Past & present</span></div>
+        <div class="hero-visual" aria-hidden="true">
+          <img class="hv-main" src="portraits/mandela.webp" alt="" width="320" height="440" />
+          <img src="portraits/hatshepsut.webp" alt="" width="200" height="213" />
+          <img src="portraits/mansamusa.webp" alt="" width="200" height="213" />
         </div>
+      </div>
+      <div class="hero-stats">
+        <div><strong id="stat-count">18</strong><span>Leaders profiled</span></div>
+        <div><strong>54</strong><span>Nations covered</span></div>
+        <div><strong>1900s→now</strong><span>Past & present</span></div>
       </div>
     </section>
 
@@ -70,7 +88,10 @@
         <button class="slide-nav next" id="slide-next" aria-label="Next leader">›</button>
       </div>
       <div class="slide-footer">
-        <span class="slide-counter" id="slide-counter">1 / 18</span>
+        <div class="slide-controls">
+          <button class="slide-toggle" id="slide-toggle" aria-label="Pause slideshow">❚❚</button>
+          <span class="slide-counter" id="slide-counter" aria-live="polite">1 / 18</span>
+        </div>
         <div class="slide-dots" id="slide-dots"></div>
       </div>
     </section>
@@ -78,15 +99,15 @@
     <!-- VALUE -->
     <section class="value">
       <div class="value-card">
-        <h3>📊 Analysis, not headlines</h3>
+        <h3>Analysis, not headlines</h3>
         <p>We don't just tell you what happened. We tell you why it matters, who's affected, and what's likely next — country by country.</p>
       </div>
       <div class="value-card">
-        <h3>🌍 Built for the diaspora</h3>
+        <h3>Built for the diaspora</h3>
         <p>Whether you're investing, advising, building, or staying rooted, KemetLeads keeps you ahead of the curve from anywhere in the world.</p>
       </div>
       <div class="value-card">
-        <h3>🏛️ Legacy you can trust</h3>
+        <h3>Legacy you can trust</h3>
         <p>Honest profiles that celebrate greatness while telling the full story — the achievements and the complexity alike.</p>
       </div>
     </section>
@@ -197,6 +218,7 @@
   <script src="images.js"></script>
   <script src="leaders-ui.js"></script>
   <script src="news.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
+  <script src="reveal.js?v=1"></script>
 </body>
 </html>

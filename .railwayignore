@@ -1,0 +1,12 @@
+# Local video-production working dirs — not part of the website runtime
+*-video/
+brand/
+logo1/
+public/videos/
+public/images/
+
+# Local tooling / editor
+.claude/
+.git/
+.DS_Store
+node_modules/
