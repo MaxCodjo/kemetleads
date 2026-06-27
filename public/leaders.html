@@ -27,23 +27,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=11" />
+  <script>(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <link rel="stylesheet" href="styles.css?v=12" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
 </head>
 <body>
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="index.html"><span class="brand-mark">KL</span> KemetLeads</a>
-      <nav class="nav-links" id="nav-links">
-        <a href="index.html">Home</a>
-        <a href="leaders.html">Leaders</a>
-        <a href="analysis.html">Analysis</a>
-        <a href="index.html#pricing">Pricing</a>
-        <a href="index.html#subscribe" class="btn btn-sm">Join our newsletter</a>
-      </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html" data-i18n="nav_home">Home</a>
+          <a href="leaders.html" data-i18n="nav_leaders">Leaders</a>
+          <a href="analysis.html" data-i18n="nav_analysis">Analysis</a>
+          <a href="index.html#pricing" data-i18n="nav_pricing">Pricing</a>
+          <a href="index.html#subscribe" class="btn btn-sm" data-i18n="cta_newsletter">Join our newsletter</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="nav-btn" id="theme-toggle" aria-label="Switch to dark mode">☾</button>
+          <button class="nav-btn" id="lang-toggle" aria-label="Passer en français">FR</button>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -51,9 +58,9 @@
     <!-- PAGE HEADER -->
     <section class="page-head">
       <div class="page-head-inner">
-        <p class="eyebrow">The Collection</p>
-        <h1>Great Leaders of Africa</h1>
-        <p class="lede">Past and present — the liberators, builders, thinkers, and reformers who shaped a continent. Arranged by group. Click any leader for the full profile.</p>
+        <p class="eyebrow" data-i18n="lp_eyebrow">The Collection</p>
+        <h1 data-i18n="lp_h1">Great Leaders of Africa</h1>
+        <p class="lede" data-i18n="lp_lede">Past and present — the liberators, builders, thinkers, and reformers who shaped a continent. Arranged by group. Click any leader for the full profile.</p>
       </div>
     </section>
 
@@ -61,14 +68,14 @@
     <section class="collection">
       <div class="controls">
         <div class="filters" id="groupmode">
-          <button class="chip active" data-mode="theme">By theme</button>
-          <button class="chip" data-mode="era">By era</button>
+          <button class="chip active" data-mode="theme" data-i18n="ctrl_theme">By theme</button>
+          <button class="chip" data-mode="era" data-i18n="ctrl_era">By era</button>
         </div>
-        <input id="search" class="search" type="search" placeholder="Search by name, country, or theme…" aria-label="Search leaders" />
+        <input id="search" class="search" type="search" placeholder="Search by name, country, or theme…" data-i18n-ph="search_ph" aria-label="Search leaders" />
       </div>
 
       <div id="collection"></div>
-      <p class="empty" id="empty" hidden>No leaders match your search.</p>
+      <p class="empty" id="empty" data-i18n="empty_msg" hidden>No leaders match your search.</p>
     </section>
   </main>
 
@@ -82,7 +89,7 @@
       <a href="https://facebook.com/kemetleads" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"/></svg></a>
     </nav>
     <p class="muted"><a class="footer-contact" href="mailto:max@stratomix.org">max@stratomix.org</a></p>
-    <p class="muted">Profiling the great leaders of Africa, past and present, with commentary on the news that matters. An independent intelligence platform.</p>
+    <p class="muted" data-i18n="footer_mission">Profiling the great leaders of Africa, past and present, with commentary on the news that matters. An independent intelligence platform.</p>
     <p class="muted small">© <span id="year"></span> KemetLeads. Profiles and commentary are editorial summaries for general information.</p>
     <p class="muted small">Portraits via Wikimedia Commons, used under their respective public-domain or Creative Commons licenses.</p>
   </footer>
@@ -96,6 +103,8 @@
     </article>
   </div>
 
+  <script src="i18n.js?v=1"></script>
+  <script src="theme.js?v=1"></script>
   <script src="nav.js?v=2"></script>
   <script src="leaders.js"></script>
   <script src="images.js"></script>

@@ -27,23 +27,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=11" />
+  <script>(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <link rel="stylesheet" href="styles.css?v=12" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
 </head>
 <body>
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="#top"><span class="brand-mark">KL</span> KemetLeads</a>
-      <nav class="nav-links" id="nav-links">
-        <a href="#showcase">Featured</a>
-        <a href="leaders.html">Leaders</a>
-        <a href="analysis.html">Analysis</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#subscribe" class="btn btn-sm">Join our newsletter</a>
-      </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <nav class="nav-links" id="nav-links">
+          <a href="#showcase" data-i18n="nav_featured">Featured</a>
+          <a href="leaders.html" data-i18n="nav_leaders">Leaders</a>
+          <a href="analysis.html" data-i18n="nav_analysis">Analysis</a>
+          <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+          <a href="#subscribe" class="btn btn-sm" data-i18n="cta_newsletter">Join our newsletter</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="nav-btn" id="theme-toggle" aria-label="Switch to dark mode">☾</button>
+          <button class="nav-btn" id="lang-toggle" aria-label="Passer en français">FR</button>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -52,14 +59,14 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow">Intelligence · Profiles · Legacy</p>
-          <h1>The leaders shaping Africa — past, present, and next.</h1>
-          <p class="lede">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Intelligence · Profiles · Legacy</p>
+          <h1 data-i18n="hero_h1">The leaders shaping Africa — past, present, and next.</h1>
+          <p class="lede" data-i18n="hero_lede">
             Profiling the great leaders of Africa, past and present, with commentary on the news that matters. An independent intelligence platform.
           </p>
           <div class="hero-cta">
-            <a href="#subscribe" class="btn btn-lg">Join our newsletter →</a>
-            <a href="leaders.html" class="btn btn-lg btn-ghost">Explore the leaders</a>
+            <a href="#subscribe" class="btn btn-lg" data-i18n="hero_cta_news">Join our newsletter →</a>
+            <a href="leaders.html" class="btn btn-lg btn-ghost" data-i18n="hero_cta_explore">Explore the leaders</a>
           </div>
         </div>
         <div class="hero-show" id="showcase">
@@ -82,47 +89,47 @@
     <!-- VALUE -->
     <section class="value">
       <div class="value-card">
-        <h3>Analysis, not headlines</h3>
-        <p>We don't just tell you what happened. We tell you why it matters, who's affected, and what's likely next — country by country.</p>
+        <h3 data-i18n="value1_h">Analysis, not headlines</h3>
+        <p data-i18n="value1_p">We don't just tell you what happened. We tell you why it matters, who's affected, and what's likely next — country by country.</p>
       </div>
       <div class="value-card">
-        <h3>Built for the diaspora</h3>
-        <p>Whether you're investing, advising, building, or staying rooted, KemetLeads keeps you ahead of the curve from anywhere in the world.</p>
+        <h3 data-i18n="value2_h">Built for the diaspora</h3>
+        <p data-i18n="value2_p">Whether you're investing, advising, building, or staying rooted, KemetLeads keeps you ahead of the curve from anywhere in the world.</p>
       </div>
       <div class="value-card">
-        <h3>Legacy you can trust</h3>
-        <p>Honest profiles that celebrate greatness while telling the full story — the achievements and the complexity alike.</p>
+        <h3 data-i18n="value3_h">Legacy you can trust</h3>
+        <p data-i18n="value3_p">Honest profiles that celebrate greatness while telling the full story — the achievements and the complexity alike.</p>
       </div>
     </section>
 
     <!-- PRICING -->
     <section id="pricing" class="pricing">
       <div class="section-head">
-        <h2>Membership</h2>
-        <p>Start free. Upgrade when the insight earns its keep.</p>
+        <h2 data-i18n="pricing_h">Membership</h2>
+        <p data-i18n="pricing_sub">Start free. Upgrade when the insight earns its keep.</p>
       </div>
       <div class="tiers tiers-2">
         <div class="tier">
-          <h3>Free</h3>
+          <h3 data-i18n="tier_free">Free</h3>
           <p class="price">$0</p>
           <ul>
-            <li>Public leader profiles</li>
-            <li>Blog</li>
-            <li>Newsletter</li>
+            <li data-i18n="f_free_1">Public leader profiles</li>
+            <li data-i18n="f_free_2">Blog</li>
+            <li data-i18n="f_free_3">Newsletter</li>
           </ul>
-          <a href="#subscribe" class="btn btn-block">Join free</a>
+          <a href="#subscribe" class="btn btn-block" data-i18n="btn_join_free">Join free</a>
         </div>
         <div class="tier tier-featured">
-          <span class="badge">Most popular</span>
-          <h3>Pro</h3>
-          <p class="price">$2<span>/mo</span></p>
+          <span class="badge" data-i18n="badge_popular">Most popular</span>
+          <h3 data-i18n="tier_pro">Pro</h3>
+          <p class="price">$2<span data-i18n="price_mo">/mo</span></p>
           <ul>
-            <li>Full archive</li>
-            <li>Complete leader database</li>
-            <li>Quarterly report</li>
-            <li>Early access to new features</li>
+            <li data-i18n="f_pro_1">Full archive</li>
+            <li data-i18n="f_pro_2">Complete leader database</li>
+            <li data-i18n="f_pro_3">Quarterly report</li>
+            <li data-i18n="f_pro_4">Early access to new features</li>
           </ul>
-          <a href="#subscribe" class="btn btn-block">Start Pro</a>
+          <a href="#subscribe" class="btn btn-block" data-i18n="btn_start_pro">Start Pro</a>
         </div>
       </div>
     </section>
@@ -130,11 +137,11 @@
     <!-- SUBSCRIBE -->
     <section id="subscribe" class="subscribe">
       <div class="subscribe-inner">
-        <h2>Africa is moving fast. Don't read about it late.</h2>
-        <p>Join the free weekly briefing on the leaders and forces shaping the continent.</p>
+        <h2 data-i18n="sub_h">Africa is moving fast. Don't read about it late.</h2>
+        <p data-i18n="sub_p">Join the free weekly briefing on the leaders and forces shaping the continent.</p>
         <form id="subscribe-form" class="subscribe-form">
-          <input type="email" id="email" placeholder="you@example.com" required aria-label="Email address" />
-          <button type="submit" class="btn btn-lg">Subscribe free</button>
+          <input type="email" id="email" placeholder="you@example.com" data-i18n-ph="sub_ph" required aria-label="Email address" />
+          <button type="submit" class="btn btn-lg" data-i18n="sub_btn">Subscribe free</button>
         </form>
         <p class="form-msg" id="form-msg" role="status"></p>
       </div>
@@ -151,7 +158,7 @@
       <a href="https://facebook.com/kemetleads" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"/></svg></a>
     </nav>
     <p class="muted"><a class="footer-contact" href="mailto:max@stratomix.org">max@stratomix.org</a></p>
-    <p class="muted">Profiling the great leaders of Africa, past and present, with commentary on the news that matters. An independent intelligence platform.</p>
+    <p class="muted" data-i18n="footer_mission">Profiling the great leaders of Africa, past and present, with commentary on the news that matters. An independent intelligence platform.</p>
     <p class="muted small">© <span id="year"></span> KemetLeads. Profiles and commentary are editorial summaries for general information.</p>
     <p class="muted small">Portraits via Wikimedia Commons, used under their respective public-domain or Creative Commons licenses.</p>
   </footer>
@@ -165,6 +172,8 @@
     </article>
   </div>
 
+  <script src="i18n.js?v=1"></script>
+  <script src="theme.js?v=1"></script>
   <script src="nav.js?v=2"></script>
   <script src="leaders.js"></script>
   <script src="images.js"></script>
