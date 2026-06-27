@@ -230,6 +230,7 @@ section { padding: 96px 24px; }
 
 /* Pricing */
 .tiers { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+.tiers-2 { max-width: 760px; grid-template-columns: repeat(2, 1fr); }
 .tier { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 36px 32px; position: relative; }
 .tier-featured { border: 1px solid var(--gold); box-shadow: var(--shadow); }
 .tier-featured::before { content: ""; position: absolute; inset: 0; border-top: 3px solid var(--gold); border-radius: var(--radius) var(--radius) 0 0; pointer-events: none; }
