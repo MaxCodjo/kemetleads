@@ -36,7 +36,10 @@
           <div class="slide-role">${l.role}</div>
           <p class="slide-tagline">${l.tagline}</p>
           <blockquote class="slide-quote">“${l.quote}”</blockquote>
-          <button class="btn btn-sm slide-cta" data-open-id="${l.id}">Read full profile →</button>
+          <div class="slide-actions">
+            <button class="btn btn-sm slide-cta" data-open-id="${l.id}">Read full profile →</button>
+            <a class="btn btn-sm btn-ghost" href="leaders.html">Explore the leaders</a>
+          </div>
         </div>
       </div>`;
   }
@@ -92,6 +95,7 @@
       keepPlaying();
     });
     slidesEl.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return; // let links (Explore the leaders) navigate
       const btn = e.target.closest("[data-open-id]");
       const slide = e.target.closest(".slide");
       const id = btn ? btn.dataset.openId : slide ? slide.dataset.id : null;

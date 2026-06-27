@@ -146,6 +146,7 @@ section { padding: 96px 24px; }
 .slide-tagline { font-family: "Fraunces", serif; font-style: italic; font-size: 1.3rem; color: var(--ink); margin: 18px 0; line-height: 1.35; }
 .slide-quote { font-family: "Fraunces", serif; color: var(--muted); font-size: 1.05rem; margin: 0 0 24px; }
 .slide-cta { align-self: flex-start; }
+.slide-actions { display: flex; gap: 10px; flex-wrap: wrap; align-self: flex-start; }
 .slide-nav {
   flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; cursor: pointer;
   background: var(--bg); border: 1px solid var(--ink); color: var(--ink);
@@ -334,7 +335,7 @@ section { padding: 96px 24px; }
   .slide.active { flex-direction: column; gap: 20px; align-items: stretch; text-align: center; }
   .slide-photo { flex: 0 0 auto; width: 100%; height: 300px; min-height: 0; }
   .slide-body { justify-content: flex-start; }
-  .slide-body .card-era, .slide-cta { align-self: center; }
+  .slide-body .card-era, .slide-cta, .slide-actions { align-self: center; }
   .slide-nav { width: 42px; height: 42px; font-size: 1.4rem; }
   .slide h3 { font-size: 1.7rem; }
   /* 70+ dots are unusable on a phone — rely on arrows + counter */
