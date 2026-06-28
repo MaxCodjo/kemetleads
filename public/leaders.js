@@ -518,6 +518,22 @@ window.LEADERS = [
     quote: "I would rather die free than live as a subject of the colonizer."
   },
   {
+    id: "behanzin",
+    name: "Béhanzin",
+    country: "Benin",
+    flag: "🇧🇯",
+    era: "past",
+    category: "Empires & Antiquity",
+    years: "c. 1845–1906",
+    role: "Last independent King of Dahomey (1890–1894)",
+    tagline: "The 'King Shark' who went to war with a European empire to keep his kingdom free.",
+    rise: "The eleventh king of Dahomey, Béhanzin took the throne in 1890 as France moved to seize the kingdom's coast and lucrative trade.",
+    did: "He led fierce resistance in the Franco-Dahomean Wars, fielding a disciplined army — including the famed women warriors known as the Dahomey Amazons (Agojie) — and held the French at bay across two hard-fought campaigns.",
+    fullPicture: "Outmatched by modern artillery, his capital Abomey fell in 1894. He surrendered to spare his people and was exiled to Martinique and then Algeria, where he died in 1906; his remains were later honoured in Benin.",
+    why: "Béhanzin endures as a symbol of uncompromising African resistance to colonial conquest — and his Agojie warriors have become an icon of the continent's martial history.",
+    quote: "I am the shark that troubles the bar."
+  },
+  {
     id: "piye",
     name: "Piye",
     country: "Sudan",

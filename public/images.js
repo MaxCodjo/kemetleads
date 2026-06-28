@@ -53,6 +53,7 @@ window.LEADER_IMAGES = {
   "gracamachel": "portraits/gracamachel.webp",
   "mansamusa": "portraits/mansamusa.webp",
   "samori": "portraits/samori.webp",
+  "behanzin": "portraits/behanzin.webp",
   "piye": "portraits/piye.webp",
   "nzinga": "portraits/nzinga.webp",
   "hannibal": "portraits/hannibal.webp",
