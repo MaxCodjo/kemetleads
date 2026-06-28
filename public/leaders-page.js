@@ -38,9 +38,10 @@
 
   function groups() {
     const list = leaders.filter(matches);
+    const catLabel = (c) => (window.locLabel ? window.locLabel("category", c) : c);
     if (mode === "era") {
       return ERA_GROUPS.map((g) => ({
-        label: g.label,
+        label: window.t ? window.t("era_group_" + g.key, g.label) : g.label,
         items: list.filter((l) => l.era === g.key),
       })).filter((g) => g.items.length);
     }
@@ -49,11 +50,11 @@
     list.forEach((l) => {
       (byCat[l.category] = byCat[l.category] || []).push(l);
     });
-    const ordered = THEME_ORDER.filter((c) => byCat[c]).map((c) => ({ label: c, items: byCat[c] }));
+    const ordered = THEME_ORDER.filter((c) => byCat[c]).map((c) => ({ label: catLabel(c), items: byCat[c] }));
     // include any categories not in THEME_ORDER, just in case
     Object.keys(byCat)
       .filter((c) => !THEME_ORDER.includes(c))
-      .forEach((c) => ordered.push({ label: c, items: byCat[c] }));
+      .forEach((c) => ordered.push({ label: catLabel(c), items: byCat[c] }));
     return ordered;
   }
 
@@ -90,6 +91,8 @@
     query = e.target.value.trim().toLowerCase();
     render();
   });
+
+  window.addEventListener("kl-lang", render);
 
   render();
 })();

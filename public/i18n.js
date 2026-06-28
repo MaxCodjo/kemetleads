@@ -63,10 +63,63 @@
     an_cta: "Découvrir les dirigeants →",
     news_h: "Le Point — notre regard sur l'actualité",
     news_sub: "Nous ne faisons pas que rapporter les faits. Voici ce qu'ils signifient et pourquoi ils comptent — une sélection avec le regard de KemetLeads.",
+
+    // Labels used by JS-rendered content (cards, slideshow, modal, news)
+    lbl_rise: "L'ascension",
+    lbl_did: "Ce qu'ils ont fait",
+    lbl_full: "Le tableau complet",
+    lbl_why: "Pourquoi c'est important",
+    lbl_read: "Lire le profil complet →",
+    lbl_explore: "Découvrir les dirigeants",
+    take_label: "Le regard de KemetLeads",
+    era_group_past: "Passé — l'héritage",
+    era_group_present: "Présent — façonner aujourd'hui",
+  };
+
+  // Era badge labels
+  const ERA_FR = { past: "passé", present: "présent" };
+  // Theme/category labels
+  const CAT_FR = {
+    "Politics & Liberation": "Politique & Libération",
+    "Politics & Governance": "Politique & Gouvernance",
+    "Empires & Antiquity": "Empires & Antiquité",
+    "Global Institutions": "Institutions mondiales",
+    "Business & Enterprise": "Affaires & Entreprise",
+    "Culture & Ideas": "Culture & Idées",
+    "Science & Environment": "Science & Environnement",
+    "Sport & Society": "Sport & Société",
+  };
+  // Country names
+  const COUNTRY_FR = {
+    "Algeria": "Algérie", "Angola": "Angola", "Benin": "Bénin", "Burkina Faso": "Burkina Faso",
+    "Cameroon": "Cameroun", "Central African Republic": "République centrafricaine",
+    "Côte d'Ivoire": "Côte d'Ivoire", "DR Congo": "RD Congo", "Egypt": "Égypte",
+    "Ethiopia": "Éthiopie", "Ghana": "Ghana", "Guinea": "Guinée",
+    "Guinea-Bissau & Cabo Verde": "Guinée-Bissau & Cap-Vert", "Kenya": "Kenya",
+    "Liberia": "Libéria", "Libya": "Libye", "Mali": "Mali", "Mozambique": "Mozambique",
+    "Nigeria": "Nigéria", "Rwanda": "Rwanda", "Senegal": "Sénégal", "South Africa": "Afrique du Sud",
+    "Sudan": "Soudan", "Tanzania": "Tanzanie", "The Gambia": "Gambie", "Tunisia": "Tunisie",
+    "Uganda": "Ouganda", "Zambia": "Zambie", "Zimbabwe": "Zimbabwe",
   };
 
   let LANG = "en";
   try { LANG = localStorage.getItem("lang") || "en"; } catch (_e) {}
+
+  // Helpers for JS-rendered content (cards, slideshow, modal, news).
+  window.klLang = () => LANG;
+  window.t = (key, en) => (LANG === "fr" ? (FR[key] || en) : en);
+  window.locLabel = (kind, value) => {
+    if (LANG !== "fr") return value;
+    if (kind === "country") return COUNTRY_FR[value] || value;
+    if (kind === "category") return CAT_FR[value] || value;
+    if (kind === "era") return ERA_FR[value] || value;
+    return value;
+  };
+  window.locLeader = (l) => {
+    if (LANG !== "fr") return l;
+    const fr = (window.LEADERS_FR || {})[l.id];
+    return fr ? Object.assign({}, l, fr) : l;
+  };
 
   function tr(el, attr, prop) {
     const key = el.getAttribute(attr);

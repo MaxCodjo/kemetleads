@@ -17,7 +17,13 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let playing = false;
 
-  function slideHTML(l) {
+  const loc = (l) => (window.locLeader ? window.locLeader(l) : l);
+  const ll = (k, v) => (window.locLabel ? window.locLabel(k, v) : v);
+  const T = (k, e) => (window.t ? window.t(k, e) : e);
+
+  function slideHTML(l0) {
+    const l = l0;
+    const x = loc(l0);
     const img = (window.LEADER_IMAGES || {})[l.id];
     const photo = img
       ? `<div class="slide-photo">
@@ -30,15 +36,15 @@
       <div class="slide" data-id="${l.id}">
         ${photo}
         <div class="slide-body">
-          <span class="card-era ${l.era}">${l.era}</span>
+          <span class="card-era ${l.era}">${ll("era", l.era)}</span>
           <h3>${l.name}</h3>
-          <div class="slide-meta">${l.country} · ${l.years}</div>
-          <div class="slide-role">${l.role}</div>
-          <p class="slide-tagline">${l.tagline}</p>
-          <blockquote class="slide-quote">“${l.quote}”</blockquote>
+          <div class="slide-meta">${ll("country", l.country)} · ${l.years}</div>
+          <div class="slide-role">${x.role}</div>
+          <p class="slide-tagline">${x.tagline}</p>
+          <blockquote class="slide-quote">“${x.quote}”</blockquote>
           <div class="slide-actions">
-            <button class="btn btn-sm slide-cta" data-open-id="${l.id}">Read full profile →</button>
-            <a class="btn btn-sm btn-ghost" href="leaders.html">Explore the leaders</a>
+            <button class="btn btn-sm slide-cta" data-open-id="${l.id}">${T("lbl_read", "Read full profile →")}</button>
+            <a class="btn btn-sm btn-ghost" href="leaders.html">${T("lbl_explore", "Explore the leaders")}</a>
           </div>
         </div>
       </div>`;
@@ -109,6 +115,10 @@
       if (typing || !modal.hidden) return;
       if (e.key === "ArrowRight") { nextSlide(); keepPlaying(); }
       if (e.key === "ArrowLeft") { prevSlide(); keepPlaying(); }
+    });
+    window.addEventListener("kl-lang", () => {
+      slidesEl.innerHTML = leaders.map(slideHTML).join("");
+      showSlide(slideIndex);
     });
   }
 
